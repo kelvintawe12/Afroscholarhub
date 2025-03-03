@@ -103,3 +103,10 @@ footer .social-icon:hover {
         margin-bottom: 1rem;
     }
 }
+
+footer a:hover {
+    color: #007bff;
+}
+footer i.fas  {
+    color: #0056b3;
+}

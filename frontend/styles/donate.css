@@ -104,11 +104,15 @@ footer a {
     text-decoration: none;
 }
 
-footer a:hover {
-    color: #007bff;
-}
-
 .social-icons a {
     font-size: 1.2rem;
     margin: 0 0.5rem;
+}
+
+
+footer a:hover {
+    color: #007bff;
+}
+footer i.fas  {
+    color: #0056b3;
 }

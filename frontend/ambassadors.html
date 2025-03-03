@@ -1,546 +1,486 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta
-      name="description"
-      content="AfroScholarHub Ambassadors - Empowering Students Through Education"
-    />
-    <meta
-      name="keywords"
-      content="Charity, Donations, Education, Scholarships, Ambassadors"
-    />
-    <meta name="author" content="AfroScholarHub" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ambassadors - AfroScholarHub Charity Initiative</title>
-    <!-- External Libraries -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/frontend/styles/ambassador.css" />
-    <style>
-      /* Custom Styles */
-      body {
-        font-family: "Poppins", sans-serif;
-      }
 
-      header {
-        background-color: #007bff;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="description" content="AfroScholarHub Ambassadors - Empowering Students Through Education" />
+  <meta name="keywords" content="Charity, Donations, Education, Scholarships, Ambassadors" />
+  <meta name="author" content="AfroScholarHub" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ambassadors - AfroScholarHub Charity Initiative</title>
+  <!-- External Libraries -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/frontend/styles/ambassador.css" />
+  <style>
+    footer {
+      color: #c3cad1;
+      background-color:
+        #343a40;
+    }
 
-      .navbar-brand img {
-        height: 40px;
-      }
+    footer a {
+      color: #ffffff;
+    }
 
-      .navbar-nav .nav-link {
-        font-weight: 500;
-      }
+    footer a:hover {
+      color: #007bff;
+    }
 
-      .ambassadors-section {
-        padding: 100px 0;
-      }
+    footer i.fas {
+      color: #0056b3;
+    }
+  </style>
+  <style>
+    /* Custom Styles */
+    body {
+      font-family: "Poppins", sans-serif;
+    }
 
-      .ambassadors-section h1 {
-        font-size: 3rem;
-        margin-bottom: 2rem;
-      }
+    header {
+      background-color: #007bff;
+    }
 
-      .ambassadors-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-      }
+    .navbar-brand img {
+      height: 40px;
+    }
 
-      .ambassador-card {
-        background-color: #ffffff;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
+    .navbar-nav .nav-link {
+      font-weight: 500;
+    }
 
-      .ambassador-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      }
+    .ambassadors-section {
+      padding: 100px 0;
+    }
 
-      .ambassador-image {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-      }
+    .ambassadors-section h1 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
 
-      .ambassador-content {
-        padding: 1.5rem;
-      }
+    .ambassadors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
 
-      .ambassador-name {
-        font-size: 1.5rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-      }
+    .ambassador-card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-      .ambassador-country {
-        font-size: 1rem;
-        color: #6c757d;
-        margin-bottom: 1rem;
-      }
+    .ambassador-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
 
-      .ambassador-description {
-        font-size: 0.9rem;
-        color: #333;
-        margin-bottom: 1.5rem;
-      }
+    .ambassador-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
 
-      .btn-primary {
-        background-color: #007bff;
-        border-color: #007bff;
-      }
+    .ambassador-content {
+      padding: 1.5rem;
+    }
 
-      .btn-primary:hover {
-        background-color: #0056b3;
-        border-color: #0056b3;
-      }
+    .ambassador-name {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
 
-      .join-team-section {
-        background-color: #f8f9fa;
-        padding: 100px 0;
-      }
+    .ambassador-country {
+      font-size: 1rem;
+      color: #6c757d;
+      margin-bottom: 1rem;
+    }
 
-      .join-team-section h2 {
-        font-size: 2.5rem;
-        margin-bottom: 1.5rem;
-      }
+    .ambassador-description {
+      font-size: 0.9rem;
+      color: #333;
+      margin-bottom: 1.5rem;
+    }
 
-      .join-team-section p {
-        font-size: 1.1rem;
-        color: #6c757d;
-      }
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
 
-      footer {
-        background-color: #343a40;
-      }
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
 
-      footer a {
-        color: #ffffff;
-        text-decoration: none;
-      }
+    .join-team-section {
+      background-color: #f8f9fa;
+      padding: 100px 0;
+    }
 
-      footer a:hover {
-        color: #007bff;
-      }
+    .join-team-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
 
-      .social-icons a {
-        font-size: 1.2rem;
-        margin: 0 0.5rem;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Header -->
-    <header class="bg-primary text-white py-3">
-      <div class="container d-flex justify-content-between align-items-center">
-        <div class="left-box d-flex gap-4">
-          <div class="phone">
-            <a href="tel:+237677590328" class="text-white text-decoration-none">
-              <i class="fas fa-phone"></i> (+237) 677590328
-            </a>
-          </div>
-          <div class="email">
-            <a
-              href="mailto:meshs2012@gmail.com"
-              class="text-white text-decoration-none"
-            >
-              <i class="fas fa-envelope"></i> meshs2012@gmail.com
-            </a>
+    .join-team-section p {
+      font-size: 1.1rem;
+      color: #6c757d;
+    }
+
+    footer {
+      background-color: #343a40;
+    }
+
+    footer a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #007bff;
+    }
+
+    .social-icons a {
+      font-size: 1.2rem;
+      margin: 0 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="bg-primary text-white py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="left-box d-flex gap-4">
+        <div class="phone">
+          <a href="tel:+237677590328" class="text-white text-decoration-none">
+            <i class="fas fa-phone"></i> (+237) 677590328
+          </a>
+        </div>
+        <div class="email">
+          <a href="mailto:meshs2012@gmail.com" class="text-white text-decoration-none">
+            <i class="fas fa-envelope"></i> meshs2012@gmail.com
+          </a>
+        </div>
+      </div>
+      <div class="right-box d-flex gap-4">
+        <div class="alumini">
+          <a href="alumni.html" class="text-white text-decoration-none">Alumni</a>
+        </div>
+        <div class="calendar">
+          <a href="calendar.html" class="text-white text-decoration-none">Calendar</a>
+        </div>
+        <div class="email-login">
+          <a href="#" class="text-white text-decoration-none">Email Login</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="/frontend/images/afro.jpg" alt="AfroScholarHub" class="me-2" style="height: 40px" />
+        <span class="fw-bold">AfroScholarHub Charity Initiative</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="programs.html">Programs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="donate.html">Donate</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Ambassadors Section -->
+  <section class="ambassadors-section py-5">
+    <div class="container">
+      <h1 class="text-center fw-bold mb-5">Our Ambassadors</h1>
+      <div class="ambassadors-grid">
+        <!-- Rwanda Ambassador -->
+        <div class="ambassador-card">
+          <img src="/frontend/images/logo.jpg" alt="Rwanda Ambassador" class="ambassador-image" />
+          <div class="ambassador-content">
+            <h3 class="ambassador-name">John Doe</h3>
+            <p class="ambassador-country">Rwanda</p>
+            <p class="ambassador-description">
+              John has been instrumental in organizing scholarship workshops
+              and mentorship programs for students in Rwanda. His efforts have
+              helped over 500 students access quality education.
+            </p>
+            <a href="#" class="btn btn-primary">Learn More</a>
           </div>
         </div>
-        <div class="right-box d-flex gap-4">
-          <div class="alumini">
-            <a href="alumni.html" class="text-white text-decoration-none"
-              >Alumni</a
-            >
+        <!-- Cameroon Ambassador -->
+        <div class="ambassador-card">
+          <img src="/frontend/images/logo.jpg" alt="Cameroon Ambassador" class="ambassador-image" />
+          <div class="ambassador-content">
+            <h3 class="ambassador-name">Jane Smith</h3>
+            <p class="ambassador-country">Cameroon</p>
+            <p class="ambassador-description">
+              Jane has been working tirelessly to provide financial assistance
+              to students in Cameroon. She has also organized career guidance
+              workshops to help students make informed decisions.
+            </p>
+            <a href="#" class="btn btn-primary">Learn More</a>
           </div>
-          <div class="calendar">
-            <a href="calendar.html" class="text-white text-decoration-none"
-              >Calendar</a
-            >
+        </div>
+        <!-- Nigeria Ambassador -->
+        <div class="ambassador-card">
+          <img src="/frontend/images/logo.jpg" alt="Nigeria Ambassador" class="ambassador-image" />
+          <div class="ambassador-content">
+            <h3 class="ambassador-name">Michael Johnson</h3>
+            <p class="ambassador-country">Nigeria</p>
+            <p class="ambassador-description">
+              Michael has been a key figure in promoting STEM education in
+              Nigeria. His initiatives have reached over 1,000 students,
+              providing them with the resources they need to succeed.
+            </p>
+            <a href="#" class="btn btn-primary">Learn More</a>
           </div>
-          <div class="email-login">
-            <a href="#" class="text-white text-decoration-none">Email Login</a>
+        </div>
+        <!-- United States Ambassador -->
+        <div class="ambassador-card">
+          <img src="/frontend/images/logo.jpg" alt="United States Ambassador" class="ambassador-image" />
+          <div class="ambassador-content">
+            <h3 class="ambassador-name">Sarah Brown</h3>
+            <p class="ambassador-country">United States</p>
+            <p class="ambassador-description">
+              Sarah has been advocating for international scholarships and
+              partnerships. Her work has enabled students from Africa to study
+              in the United States.
+            </p>
+            <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+        <!-- Ethiopia Ambassador -->
+        <div class="ambassador-card">
+          <img src="/frontend/images/logo.jpg" alt="Ethiopia Ambassador" class="ambassador-image" />
+          <div class="ambassador-content">
+            <h3 class="ambassador-name">David Wilson</h3>
+            <p class="ambassador-country">Ethiopia</p>
+            <p class="ambassador-description">
+              David has been working on improving access to education in rural
+              areas of Ethiopia. His efforts have benefited over 300 students.
+            </p>
+            <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+        <!-- Egypt Ambassador -->
+        <div class="ambassador-card">
+          <img src="/frontend/images/logo.jpg" alt="Egypt Ambassador" class="ambassador-image" />
+          <div class="ambassador-content">
+            <h3 class="ambassador-name">Emily Davis</h3>
+            <p class="ambassador-country">Egypt</p>
+            <p class="ambassador-description">
+              Emily has been promoting cultural exchange programs and
+              scholarships for students in Egypt. Her work has helped bridge
+              the gap between different cultures.
+            </p>
+            <a href="#" class="btn btn-primary">Learn More</a>
           </div>
         </div>
       </div>
-    </header>
+    </div>
+  </section>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="index.html">
-          <img
-            src="/frontend/images/afro.jpg"
-            alt="AfroScholarHub"
-            class="me-2"
-            style="height: 40px"
-          />
-          <span class="fw-bold">AfroScholarHub Charity Initiative</span>
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="programs.html">Programs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="donate.html">Donate</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Ambassadors Section -->
-    <section class="ambassadors-section py-5">
-      <div class="container">
-        <h1 class="text-center fw-bold mb-5">Our Ambassadors</h1>
-        <div class="ambassadors-grid">
-          <!-- Rwanda Ambassador -->
-          <div class="ambassador-card">
-            <img
-              src="/frontend/images/logo.jpg"
-              alt="Rwanda Ambassador"
-              class="ambassador-image"
-            />
-            <div class="ambassador-content">
-              <h3 class="ambassador-name">John Doe</h3>
-              <p class="ambassador-country">Rwanda</p>
-              <p class="ambassador-description">
-                John has been instrumental in organizing scholarship workshops
-                and mentorship programs for students in Rwanda. His efforts have
-                helped over 500 students access quality education.
-              </p>
-              <a href="#" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-          <!-- Cameroon Ambassador -->
-          <div class="ambassador-card">
-            <img
-              src="/frontend/images/logo.jpg"
-              alt="Cameroon Ambassador"
-              class="ambassador-image"
-            />
-            <div class="ambassador-content">
-              <h3 class="ambassador-name">Jane Smith</h3>
-              <p class="ambassador-country">Cameroon</p>
-              <p class="ambassador-description">
-                Jane has been working tirelessly to provide financial assistance
-                to students in Cameroon. She has also organized career guidance
-                workshops to help students make informed decisions.
-              </p>
-              <a href="#" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-          <!-- Nigeria Ambassador -->
-          <div class="ambassador-card">
-            <img
-              src="/frontend/images/logo.jpg"
-              alt="Nigeria Ambassador"
-              class="ambassador-image"
-            />
-            <div class="ambassador-content">
-              <h3 class="ambassador-name">Michael Johnson</h3>
-              <p class="ambassador-country">Nigeria</p>
-              <p class="ambassador-description">
-                Michael has been a key figure in promoting STEM education in
-                Nigeria. His initiatives have reached over 1,000 students,
-                providing them with the resources they need to succeed.
-              </p>
-              <a href="#" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-          <!-- United States Ambassador -->
-          <div class="ambassador-card">
-            <img
-              src="/frontend/images/logo.jpg"
-              alt="United States Ambassador"
-              class="ambassador-image"
-            />
-            <div class="ambassador-content">
-              <h3 class="ambassador-name">Sarah Brown</h3>
-              <p class="ambassador-country">United States</p>
-              <p class="ambassador-description">
-                Sarah has been advocating for international scholarships and
-                partnerships. Her work has enabled students from Africa to study
-                in the United States.
-              </p>
-              <a href="#" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-          <!-- Ethiopia Ambassador -->
-          <div class="ambassador-card">
-            <img
-              src="/frontend/images/logo.jpg"
-              alt="Ethiopia Ambassador"
-              class="ambassador-image"
-            />
-            <div class="ambassador-content">
-              <h3 class="ambassador-name">David Wilson</h3>
-              <p class="ambassador-country">Ethiopia</p>
-              <p class="ambassador-description">
-                David has been working on improving access to education in rural
-                areas of Ethiopia. His efforts have benefited over 300 students.
-              </p>
-              <a href="#" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-          <!-- Egypt Ambassador -->
-          <div class="ambassador-card">
-            <img
-              src="/frontend/images/logo.jpg"
-              alt="Egypt Ambassador"
-              class="ambassador-image"
-            />
-            <div class="ambassador-content">
-              <h3 class="ambassador-name">Emily Davis</h3>
-              <p class="ambassador-country">Egypt</p>
-              <p class="ambassador-description">
-                Emily has been promoting cultural exchange programs and
-                scholarships for students in Egypt. Her work has helped bridge
-                the gap between different cultures.
-              </p>
-              <a href="#" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Join Our Team Section -->
-    <section class="join-team-section bg-light py-5">
-      <div class="container">
-        <h2 class="text-center fw-bold mb-5">Join Our Team</h2>
-        <p class="text-center text-muted mb-5">
-          Are you passionate about education and want to make a difference? Join
-          us as an ambassador or representative and help us empower students
-          across the globe.
-        </p>
-        <div class="row justify-content-center">
-          <div class="col-md-8">
-            <form id="joinTeamForm" class="needs-validation" novalidate>
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <label for="firstName" class="form-label">First Name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="firstName"
-                    required
-                  />
-                  <div class="invalid-feedback">
-                    Please enter your first name.
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <label for="lastName" class="form-label">Last Name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="lastName"
-                    required
-                  />
-                  <div class="invalid-feedback">
-                    Please enter your last name.
-                  </div>
-                </div>
-                <div class="col-12">
-                  <label for="email" class="form-label">Email Address</label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    required
-                  />
-                  <div class="invalid-feedback">
-                    Please enter a valid email address.
-                  </div>
-                </div>
-                <div class="col-12">
-                  <label for="country" class="form-label">Country</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="country"
-                    required
-                  />
-                  <div class="invalid-feedback">Please enter your country.</div>
-                </div>
-                <div class="col-12">
-                  <label for="message" class="form-label"
-                    >Why do you want to join our team?</label
-                  >
-                  <textarea
-                    class="form-control"
-                    id="message"
-                    rows="4"
-                    required
-                  ></textarea>
-                  <div class="invalid-feedback">
-                    Please tell us why you want to join.
-                  </div>
-                </div>
-                <div class="col-12 text-center">
-                  <button type="submit" class="btn btn-primary btn-lg px-5">
-                    Submit Application
-                  </button>
+  <!-- Join Our Team Section -->
+  <section class="join-team-section bg-light py-5">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5">Join Our Team</h2>
+      <p class="text-center text-muted mb-5">
+        Are you passionate about education and want to make a difference? Join
+        us as an ambassador or representative and help us empower students
+        across the globe.
+      </p>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <form id="joinTeamForm" class="needs-validation" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" required />
+                <div class="invalid-feedback">
+                  Please enter your first name.
                 </div>
               </div>
-            </form>
+              <div class="col-md-6">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" required />
+                <div class="invalid-feedback">
+                  Please enter your last name.
+                </div>
+              </div>
+              <div class="col-12">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" required />
+                <div class="invalid-feedback">
+                  Please enter a valid email address.
+                </div>
+              </div>
+              <div class="col-12">
+                <label for="country" class="form-label">Country</label>
+                <input type="text" class="form-control" id="country" required />
+                <div class="invalid-feedback">Please enter your country.</div>
+              </div>
+              <div class="col-12">
+                <label for="message" class="form-label">Why do you want to join our team?</label>
+                <textarea class="form-control" id="message" rows="4" required></textarea>
+                <div class="invalid-feedback">
+                  Please tell us why you want to join.
+                </div>
+              </div>
+              <div class="col-12 text-center">
+                <button type="submit" class="btn btn-primary btn-lg px-5">
+                  Submit Application
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        <!-- Contact Info -->
+        <div class="space-y-4">
+          <h5 class="text-lg font-semibold text-white">Find Us</h5>
+          <div class="space-y-2">
+            <p class="flex items-center">
+              <i class="fas fa-map-marker-alt mr-3 text-blue-400"></i>
+              No. 123, Etamba Street, Bafoussam, West Region, Cameroon
+            </p>
+            <p class="flex items-center">
+              <i class="fas fa-clock mr-3 text-blue-400"></i>
+              Mon-Fri: 8:00 AM - 5:00 PM
+            </p>
+          </div>
+        </div>
+        <!-- Map -->
+        <div class="md:col-span-2 lg:col-span-1">
+          <h5 class="text-lg font-semibold text-white mb-4">Our Location</h5>
+          <div class="aspect-video bg-gray-800 rounded-lg overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31900.045802167824!2d30.075181450000006!3d-1.9508857999999893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca6f31a055555%3A0x115729c9d0558f4!2sKigali%20Alliance%20Business%20Centre!5e0!3m2!1sen!2srw!4v1741006331543!5m2!1sen!2srw"
+              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+        <!-- Contact Details -->
+        <div class="space-y-4">
+          <h5 class="text-lg font-semibold text-white">Contact Us</h5>
+          <div class="space-y-2">
+            <p class="flex items-center">
+              <i class="fas fa-phone mr-3 text-blue-400"></i>
+              +237 677 590 328
+            </p>
+            <p class="flex items-center">
+              <i class="fas fa-envelope mr-3 text-blue-400"></i>
+              meshs2012@gmail.com
+            </p>
+            <p class="flex items-center">
+              <i class="fas fa-clock mr-3 text-blue-400"></i>
+              Monday—Saturday: 8:00AM–4:00PM<br>
+              Sunday: Closed
+            </p>
           </div>
         </div>
       </div>
-    </section>
+      <!-- Social Media & Copyright -->
+      <div class="pt-8 border-t border-gray-800 text-center">
+        <div class="flex justify-center space-x-6 mb-4">
+          <a href="#" class="social-icon">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+        <p class="text-sm text-gray-500">
+          &copy; 2023 AfroScholarHub. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
 
-    <!-- Footer -->
-      <footer class="bg-gray-900 text-gray-300 py-12">
-   <div class="container mx-auto px-4">
-     <div class="grid md:grid-cols-3 gap-8 mb-8">
-       <!-- Contact Info -->
-       <div class="space-y-4">
-         <h5 class="text-lg font-semibold text-white">Find Us</h5>
-         <div class="space-y-2">
-           <p class="flex items-center">
-             <i class="fas fa-map-marker-alt mr-3 text-blue-400"></i>
-             No. 123, Etamba Street, Bafoussam, West Region, Cameroon
-           </p>
-           <p class="flex items-center">
-             <i class="fas fa-clock mr-3 text-blue-400"></i>
-             Mon-Fri: 8:00 AM - 5:00 PM
-           </p>
-         </div>
-       </div>
-       <!-- Map -->
-       <div class="md:col-span-2 lg:col-span-1">
-         <h5 class="text-lg font-semibold text-white mb-4">Our Location</h5>
-         <div class="aspect-video bg-gray-800 rounded-lg overflow-hidden">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31900.045802167824!2d30.075181450000006!3d-1.9508857999999893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca6f31a055555%3A0x115729c9d0558f4!2sKigali%20Alliance%20Business%20Centre!5e0!3m2!1sen!2srw!4v1741006331543!5m2!1sen!2srw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-         </div>
-       </div>
-       <!-- Contact Details -->
-       <div class="space-y-4">
-         <h5 class="text-lg font-semibold text-white">Contact Us</h5>
-         <div class="space-y-2">
-           <p class="flex items-center">
-             <i class="fas fa-phone mr-3 text-blue-400"></i>
-             +237 677 590 328
-           </p>
-           <p class="flex items-center">
-             <i class="fas fa-envelope mr-3 text-blue-400"></i>
-             meshs2012@gmail.com
-           </p>
-           <p class="flex items-center">
-             <i class="fas fa-clock mr-3 text-blue-400"></i>
-             Monday—Saturday: 8:00AM–4:00PM<br>
-             Sunday: Closed
-           </p>
-         </div>
-       </div>
-     </div>
-     <!-- Social Media & Copyright -->
-     <div class="pt-8 border-t border-gray-800 text-center">
-       <div class="flex justify-center space-x-6 mb-4">
-         <a href="#" class="social-icon">
-           <i class="fab fa-facebook-f"></i>
-         </a>
-         <a href="#" class="social-icon">
-           <i class="fab fa-twitter"></i>
-         </a>
-         <a href="#" class="social-icon">
-           <i class="fab fa-instagram"></i>
-         </a>
-         <a href="#" class="social-icon">
-           <i class="fab fa-linkedin-in"></i>
-         </a>
-       </div>
-       <p class="text-sm text-gray-500">
-         &copy; 2023 AfroScholarHub. All rights reserved.
-       </p>
-     </div>
-   </div>
- </footer>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Form submission handling
+    (function () {
+      "use strict";
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      // Form submission handling
-      (function () {
-        "use strict";
-
-        const form = document.getElementById("joinTeamForm");
-        const successMessage = document.createElement("div");
-        successMessage.className = "alert alert-success mt-4 text-center";
-        successMessage.innerHTML = `
+      const form = document.getElementById("joinTeamForm");
+      const successMessage = document.createElement("div");
+      successMessage.className = "alert alert-success mt-4 text-center";
+      successMessage.innerHTML = `
                 <h4 class="alert-heading">Application Submitted!</h4>
                 <p>Thank you for your interest in joining our team. We will get back to you soon.</p>
             `;
-        successMessage.style.display = "none";
+      successMessage.style.display = "none";
 
-        form.parentNode.insertBefore(successMessage, form.nextSibling);
+      form.parentNode.insertBefore(successMessage, form.nextSibling);
 
-        form.addEventListener(
-          "submit",
-          function (event) {
-            event.preventDefault();
-            event.stopPropagation();
+      form.addEventListener(
+        "submit",
+        function (event) {
+          event.preventDefault();
+          event.stopPropagation();
 
-            if (form.checkValidity()) {
-              form.style.display = "none";
-              successMessage.style.display = "block";
+          if (form.checkValidity()) {
+            form.style.display = "none";
+            successMessage.style.display = "block";
 
-              setTimeout(() => {
-                form.style.display = "block";
-                successMessage.style.display = "none";
-                form.reset();
-                form.classList.remove("was-validated");
-              }, 5000);
-            }
+            setTimeout(() => {
+              form.style.display = "block";
+              successMessage.style.display = "none";
+              form.reset();
+              form.classList.remove("was-validated");
+            }, 5000);
+          }
 
-            form.classList.add("was-validated");
-          },
-          false
-        );
-      })();
-    </script>
-  </body>
+          form.classList.add("was-validated");
+        },
+        false
+      );
+    })();
+  </script>
+</body>
+
 </html>

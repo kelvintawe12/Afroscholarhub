@@ -159,3 +159,19 @@ body {
         margin-bottom: 2rem;
     }
 }
+footer {
+    background-color: #000306;
+    color: white;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #007bff;
+}
+footer i.fas  {
+    color: #0056b3;
+}
