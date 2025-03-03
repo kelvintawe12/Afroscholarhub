@@ -1,93 +1,161 @@
-/* Custom Styles */
+/* Base Styles */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --dark-color: #343a40;
+    --light-color: #f8f9fa;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
 }
 
-header {
-    background-color: #007bff;
-}
-
-.navbar-brand img {
-    height: 40px;
-}
-
-.navbar-nav .nav-link {
-    font-weight: 500;
-}
-
-.success-stories-section {
-    padding: 100px 0;
-}
-
-.success-stories-section h1 {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
-}
-
-.success-stories-section p {
-    font-size: 1.1rem;
-    color: #6c757d;
-}
-
-.carousel-item img {
-    height: 500px;
-    object-fit: cover;
-}
-
-.carousel-caption {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 1rem;
-    border-radius: 10px;
-}
-
-.card {
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.card-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-.card-text {
+/* Header Styles */
+.top-header {
     font-size: 0.9rem;
-    color: #333;
-    margin-bottom: 1.5rem;
 }
 
-.btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
+.top-header a:hover {
+    opacity: 0.8;
 }
 
-.btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
+/* Navigation */
+.navbar-brand img {
+    transition: transform 0.3s ease;
 }
 
-footer {
-    background-color: #343a40;
+.navbar-brand:hover img {
+    transform: scale(1.05);
 }
 
-footer a {
-    color: #ffffff;
+.nav-link {
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--primary-color);
+}
+
+/* Hero Section */
+.success-hero {
+    padding: 6rem 0;
+    background: linear-gradient(rgba(0,123,255,0.1), rgba(0,123,255,0.05));
+}
+
+/* Profile Cards */
+.profile-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+}
+
+.profile-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.profile-card img {
+    height: 250px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.achievements-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.achievements-list li::before {
+    content: "✓";
+    color: var(--success-color);
+    margin-right: 0.5rem;
+}
+
+/* Admission Proof Section */
+.proof-card {
+    border: 2px solid var(--light-color);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.proof-card img {
+    height: 300px;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.proof-card:hover img {
+    opacity: 0.9;
+}
+
+/* Newsletter */
+.newsletter {
+    background: var(--primary-color);
+}
+
+.newsletter-form .form-control {
+    border-radius: 25px 0 0 25px;
+}
+
+.newsletter-form .btn {
+    border-radius: 0 25px 25px 0;
+}
+
+/* Footer */
+.main-footer {
+    background: var(--dark-color);
+}
+
+.social-links a {
+    transition: opacity 0.3s ease;
+}
+
+.social-links a:hover {
+    opacity: 0.8;
     text-decoration: none;
 }
 
-footer a:hover {
-    color: #007bff;
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.social-icons a {
-    font-size: 1.2rem;
-    margin: 0 0.5rem;
+.fade-in {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .top-header .contact-info, 
+    .top-header .quick-links {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .carousel-item .row {
+        flex-direction: column-reverse;
+    }
+
+    .profile-card {
+        margin-bottom: 2rem;
+    }
 }
