@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AfroScholarHub - Support Education</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      .donation-option:hover {
+        transform: translateY(-5px);
+        transition: all 0.3s ease;
+      }
+      .active-donation-type {
+        @apply bg-blue-600 text-white;
+      }
+      .payment-method-card {
+        @apply p-6 rounded-xl border-2 cursor-pointer hover:border-blue-500 transition-all;
+      }
+      .selected-payment {
+        @apply border-blue-500 bg-blue-50;
+      }
+      .gradient-heading {
+        background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 font-inter">
+    <!-- Enhanced Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+      <div class="container mx-auto px-4">
+        <nav class="flex justify-between items-center h-16">
+          <a href="/" class="flex items-center space-x-3">
+            <img src="education3.jpg" alt="Logo" class="h-10 w-10 rounded-lg">
+            <span class="text-2xl font-bold text-gray-800">AfroScholarHub</span>
+          </a>
+          
+          <!-- Desktop Nav -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/about" class="nav-link">About</a>
+            <a href="/programs" class="nav-link">Programs</a>
+            <a href="/donate" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors">
+              Donate
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button id="menu-toggle" class="md:hidden text-gray-600">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </nav>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden absolute top-16 w-full bg-white shadow-lg">
+        <div class="flex flex-col p-4 space-y-4">
+          <a href="/" class="mobile-nav-link">Home</a>
+          <a href="/about" class="mobile-nav-link">About</a>
+          <a href="/programs" class="mobile-nav-link">Programs</a>
+          <a href="/donate" class="bg-blue-600 text-white text-center py-3 rounded-lg">
+            Donate Now
+          </a>
+        </div>
+      </div>
+    </header>
+
+
+    <!-- Donation Hero Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-50 to-indigo-50">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 gradient-heading">
+          Empower African Scholars
+        </h1>
+        <p class="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
+          Your support opens doors to education, resources, and opportunities for bright African students. 
+          Every contribution makes a lasting impact.
+        </p>
+        
+        <!-- Donation Type Toggle -->
+        <div class="flex justify-center mb-8">
+          <div class="bg-gray-100 p-1 rounded-full">
+            <button onclick="toggleDonationType('one-time')" 
+                    class="donation-type-btn px-6 py-2 rounded-full active-donation-type">
+              One-Time
+            </button>
+            <button onclick="toggleDonationType('monthly')" 
+                    class="donation-type-btn px-6 py-2 rounded-full">
+              Monthly
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Payment Methods Grid -->
+    <section class="container mx-auto px-4 py-16">
+      <h2 class="text-3xl font-bold text-center mb-12">Choose Payment Method</h2>
+      
+      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <!-- Mobile Money -->
+        <div class="payment-method-card" onclick="selectPayment('mobile')">
+          <div class="text-center">
+            <i class="fas fa-mobile-alt text-4xl text-blue-600 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Mobile Money</h3>
+            <p class="text-gray-600">MTN, AirtelTigo, Vodafone</p>
+          </div>
+        </div>
+
+        <!-- Bank Transfer -->
+        <div class="payment-method-card" onclick="selectPayment('bank')">
+          <div class="text-center">
+            <i class="fas fa-university text-4xl text-blue-600 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Bank Transfer</h3>
+            <p class="text-gray-600">Local & International Banks</p>
+          </div>
+        </div>
+
+        <!-- Credit Card -->
+        <div class="payment-method-card" onclick="selectPayment('card')">
+          <div class="text-center">
+            <i class="fab fa-cc-visa text-4xl text-blue-600 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Credit/Debit Card</h3>
+            <p class="text-gray-600">Visa, Mastercard, AMEX</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dynamic Donation Forms -->
+    <section class="container mx-auto px-4 py-12 max-w-2xl">
+      <!-- Mobile Money Form -->
+      <div id="mobile-form" class="donation-form hidden">
+        <form class="bg-white p-8 rounded-xl shadow-lg">
+          <div class="mb-6">
+            <label class="block text-gray-700 mb-2">Network Provider</label>
+            <select class="w-full p-3 border rounded-lg">
+              <option>MTN Mobile Money</option>
+              <option>AirtelTigo Money</option>
+              <option>Vodafone Cash</option>
+            </select>
+          </div>
+          <div class="mb-6">
+            <label class="block text-gray-700 mb-2">Phone Number</label>
+            <input type="tel" class="w-full p-3 border rounded-lg" placeholder="055 123 4567">
+          </div>
+          <button class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors">
+            Complete Donation
+          </button>
+        </form>
+      </div>
+
+      <!-- Bank Transfer Form -->
+      <div id="bank-form" class="donation-form hidden">
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+          <h3 class="text-xl font-semibold mb-4">Bank Details</h3>
+          <div class="space-y-4">
+            <div class="flex justify-between border-b pb-2">
+              <span class="text-gray-600">Bank Name:</span>
+              <span class="font-medium">Pan African Bank</span>
+            </div>
+            <div class="flex justify-between border-b pb-2">
+              <span class="text-gray-600">Account Number:</span>
+              <span class="font-medium">123 456 7890</span>
+            </div>
+            <div class="flex justify-between border-b pb-2">
+              <span class="text-gray-600">SWIFT Code:</span>
+              <span class="font-medium">PABCGHAC</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Credit Card Form -->
+      <div id="card-form" class="donation-form hidden">
+        <form class="bg-white p-8 rounded-xl shadow-lg">
+          <div class="mb-6">
+            <label class="block text-gray-700 mb-2">Card Number</label>
+            <input type="text" class="w-full p-3 border rounded-lg" placeholder="4242 4242 4242 4242">
+          </div>
+          <div class="grid grid-cols-2 gap-4 mb-6">
+            <div>
+              <label class="block text-gray-700 mb-2">Expiry Date</label>
+              <input type="text" class="w-full p-3 border rounded-lg" placeholder="MM/YY">
+            </div>
+            <div>
+              <label class="block text-gray-700 mb-2">CVC</label>
+              <input type="text" class="w-full p-3 border rounded-lg" placeholder="123">
+            </div>
+          </div>
+          <button class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors">
+            Donate Now
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="bg-blue-900 text-white py-16">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-8">Your Impact Matters</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="p-6">
+            <div class="text-4xl font-bold mb-2">500+</div>
+            <div class="text-gray-300">Students Supported</div>
+          </div>
+          <div class="p-6">
+            <div class="text-4xl font-bold mb-2">85%</div>
+            <div class="text-gray-300">Graduation Rate</div>
+          </div>
+          <div class="p-6">
+            <div class="text-4xl font-bold mb-2">$1M+</div>
+            <div class="text-gray-300">Scholarships Awarded</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Toggle donation type
+      function toggleDonationType(type) {
+        document.querySelectorAll('.donation-type-btn').forEach(btn => {
+          btn.classList.remove('active-donation-type');
+        });
+        event.target.classList.add('active-donation-type');
+      }
+
+      // Handle payment method selection
+      function selectPayment(method) {
+        document.querySelectorAll('.payment-method-card').forEach(card => {
+          card.classList.remove('selected-payment');
+        });
+        event.currentTarget.classList.add('selected-payment');
+        
+        document.querySelectorAll('.donation-form').forEach(form => {
+          form.classList.add('hidden');
+        });
+        document.getElementById(`${method}-form`).classList.remove('hidden');
+      }
+
+      // Mobile menu toggle
+      document.getElementById('menu-toggle').addEventListener('click', () => {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+      });
+    </script>
+     <footer class="bg-gray-900 text-gray-300 py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-3 gap-8 mb-8">
+          <!-- Contact Info -->
+          <div class="space-y-4">
+            <h5 class="text-lg font-semibold text-white">Find Us</h5>
+            <div class="space-y-2">
+              <p class="flex items-center">
+                <i class="fas fa-map-marker-alt mr-3 text-blue-400"></i>
+                No. 123, Etamba Street, Bafoussam, West Region, Cameroon
+              </p>
+              <p class="flex items-center">
+                <i class="fas fa-clock mr-3 text-blue-400"></i>
+                Mon-Fri: 8:00 AM - 5:00 PM
+              </p>
+            </div>
+          </div>
+          <!-- Map -->
+          <div class="md:col-span-2 lg:col-span-1">
+            <h5 class="text-lg font-semibold text-white mb-4">Our Location</h5>
+            <div class="aspect-video bg-gray-800 rounded-lg overflow-hidden">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31900.427917543988!2d30.
+   142304767885015!3d-1.930631923973204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.
+   1!3m3!1m2!1s0x19dca77688d3131f%3A0x3a65f6d29a33c0d3!2sAfrican%20Leadership%20Univers
+   3m2!1sen!2srw!4v1740972551795!5m2!1sen!2srw"
+                class="w-full h-full"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+          <!-- Contact Details -->
+          <div class="space-y-4">
+            <h5 class="text-lg font-semibold text-white">Contact Us</h5>
+            <div class="space-y-2">
+              <p class="flex items-center">
+                <i class="fas fa-phone mr-3 text-blue-400"></i>
+                +237 677 590 328
+              </p>
+              <p class="flex items-center">
+                <i class="fas fa-envelope mr-3 text-blue-400"></i>
+                meshs2012@gmail.com
+              </p>
+              <p class="flex items-center">
+                <i class="fas fa-clock mr-3 text-blue-400"></i>
+                Monday—Saturday: 8:00AM–4:00PM<br>
+                Sunday: Closed
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Social Media & Copyright -->
+        <div class="pt-8 border-t border-gray-800 text-center">
+          <div class="flex justify-center space-x-6 mb-4">
+            <a href="#" class="social-icon">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+          <p class="text-sm text-gray-500">
+            &copy; 2023 AfroScholarHub. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="/frontend/scripts/payments.js"></script>
+
+  </body>
+</html>

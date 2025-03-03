@@ -1,54 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="description" content="Partnerships - AfroScholarHub Charity Initiative" />
-    <meta name="keywords" content="Partnerships, Education, Scholarships, AfroScholarHub" />
-    <meta name="author" content="AfroScholarHub" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Partnerships - AfroScholarHub Charity Initiative</title>
-    <!-- External Libraries -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/frontend/styles/partnerships.css" />
+    <title>AfroScholarHub - Partnerships</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/frontend/styles/partners.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Add these new styles */
+        .nav-link {
+            @apply text-gray-600 hover:text-blue-600 transition-colors duration-300;
+        }
+
+        .mobile-nav-link {
+            @apply py-2 px-4 hover:bg-blue-50 rounded-lg text-gray-700;
+        }
+
+        .partner-icon {
+            @apply p-4 rounded-lg bg-opacity-20;
+        }
+
+        .social-icon {
+            @apply hover:text-blue-400 transition-colors duration-300;
+        }
+    </style>
+    <style>
+        .partnership-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+
+        .gradient-heading {
+            background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .benefit-list li::before {
+            content: "✓";
+            @apply text-green-500 mr-2;
+        }
+    </style>
 </head>
-<body>
+
+<body class="bg-gray-50 font-inter">
     <!-- Header -->
-    <header class="bg-primary text-white py-3">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div class="left-box d-flex gap-4">
-                <div class="phone">
-                    <a href="tel:+237677590328" class="text-white text-decoration-none">
-                        <i class="fas fa-phone"></i> (+237) 677590328
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center h-16">
+                <a href="/" class="flex items-center space-x-3">
+                    <img src="education3.jpg" alt="Logo" class="h-10 w-10 rounded-lg">
+                    <span class="text-2xl font-bold text-gray-800">AfroScholarHub</span>
+                </a>
+
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/programs" class="nav-link">Programs</a>
+                    <a href="/partnerships"
+                        class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors">
+                        Partnerships
                     </a>
                 </div>
-                <div class="email">
-                    <a href="mailto:meshs2012@gmail.com" class="text-white text-decoration-none">
-                        <i class="fas fa-envelope"></i> meshs2012@gmail.com
-                    </a>
-                </div>
-            </div>
-            <div class="right-box d-flex gap-4">
-                <div class="alumini">
-                    <a href="alumni.html" class="text-white text-decoration-none">Alumni</a>
-                </div>
-                <div class="calendar">
-                    <a href="calendar.html" class="text-white text-decoration-none">Calendar</a>
-                </div>
-                <div class="email-login">
-                    <a href="#" class="text-white text-decoration-none">Email Login</a>
-                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-toggle" class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </nav>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-16 w-full bg-white shadow-lg">
+            <div class="flex flex-col p-4 space-y-4">
+                <a href="/" class="mobile-nav-link">Home</a>
+                <a href="/about" class="mobile-nav-link">About</a>
+                <a href="/programs" class="mobile-nav-link">Programs</a>
+                <a href="/partnerships" class="bg-blue-600 text-white text-center py-3 rounded-lg">
+                    Partnerships
+                </a>
             </div>
         </div>
     </header>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="images/logo/logo.png" alt="AfroScholarHub"
+    <!-- Partnerships Hero -->
+    <section class="py-20 bg-gradient-to-r from-blue-50 to-indigo-50">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 gradient-heading">
+                Strategic Partnerships for Education
+            </h1>
+            <p class="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
+                Collaborating with organizations and institutions to create sustainable educational opportunities across
+                Africa.
+            </p>
+        </div>
+    </section>
+
+    <!-- Current Partnerships -->
+    <section class="container mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-center mb-12">Our Valued Partners</h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- Partner Card 1 -->
+            <div class="partnership-card bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-university text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold">Pan African University</h3>
+                </div>
+                <p class="text-gray-600 mb-4">Providing scholarship opportunities and internship programs for our top
+                    students.</p>
+                <div class="benefit-list space-y-2">
+                    <p class="font-medium text-gray-800">Collaboration Benefits:</p>
+                    <ul class="text-gray-600">
+                        <li>Full tuition coverage</li>
+                        <li>Research opportunities</li>
+                        <li>Faculty mentorship</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Partner Card 2 -->
+            <div class="partnership-card bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-mobile-alt text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold">Mobile Tech Alliance</h3>
+                </div>
+                <p class="text-gray-600 mb-4">Delivering digital learning platforms and mobile education solutions.</p>
+                <div class="benefit-list space-y-2">
+                    <p class="font-medium text-gray-800">Collaboration Benefits:</p>
+                    <ul class="text-gray-600">
+                        <li>E-learning platforms</li>
+                        <li>Device donations</li>
+                        <li>Digital literacy training</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Partner Card 3 -->
+            <div class="partnership-card bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-hand-holding-heart text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold">Global Give Foundation</h3>
+                </div>
+                <p class="text-gray-600 mb-4">Supporting our community outreach programs and infrastructure development.
+                </p>
+                <div class="benefit-list space-y-2">
+                    <p class="font-medium text-gray-800">Collaboration Benefits:</p>
+                    <ul class="text-gray-600">
+                        <li>Community centers</li>
+                        <li>Learning materials</li>
+                        <li>Teacher training</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership Opportunities -->
+    <section class="bg-blue-50 py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-8">Partnership Opportunities</h2>
+                <div class="grid md:grid-cols-2 gap-8 text-left">
+                    <!-- Opportunity 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-book-open text-xl text-yellow-600"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold">Educational Publishers</h3>
+                        </div>
+                        <p class="text-gray-600">Seeking partnerships to provide textbooks and learning resources at
+                            subsidized rates.</p>
+                    </div>
+
+                    <!-- Opportunity 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-laptop-code text-xl text-red-600"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold">Tech Companies</h3>
+                        </div>
+                        <p class="text-gray-600">Looking for technology partners to develop digital learning solutions
+                            and provide IT infrastructure.</p>
+                    </div>
+                </div>
+
+                <div class="mt-12 bg-white p-8 rounded-xl shadow-lg max-w-2xl mx-auto">
+                    <h3 class="text-2xl font-bold mb-4">Become a Partner</h3>
+                    <p class="text-gray-600 mb-6">Join us in creating educational opportunities across Africa:</p>
+                    <ul class="benefit-list text-gray-600 space-y-2 mb-8 text-left">
+                        <li>Corporate sponsorship programs</li>
+                        <li>Pro-bono expertise sharing</li>
+                        <li>Infrastructure development partnerships</li>
+                        <li>Research collaborations</li>
+                    </ul>
+                    <button class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors">
+                        Contact Our Partnership Team
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+ <footer class="bg-gray-900 text-gray-300 py-12">
+   <div class="container mx-auto px-4">
+     <div class="grid md:grid-cols-3 gap-8 mb-8">
+       <!-- Contact Info -->
+       <div class="space-y-4">
+         <h5 class="text-lg font-semibold text-white">Find Us</h5>
+         <div class="space-y-2">
+           <p class="flex items-center">
+             <i class="fas fa-map-marker-alt mr-3 text-blue-400"></i>
+             No. 123, Etamba Street, Bafoussam, West Region, Cameroon
+           </p>
+           <p class="flex items-center">
+             <i class="fas fa-clock mr-3 text-blue-400"></i>
+             Mon-Fri: 8:00 AM - 5:00 PM
+           </p>
+         </div>
+       </div>
+       <!-- Map -->
+       <div class="md:col-span-2 lg:col-span-1">
+         <h5 class="text-lg font-semibold text-white mb-4">Our Location</h5>
+         <div class="aspect-video bg-gray-800 rounded-lg overflow-hidden">
+           <iframe 
+             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31900.427917543988!2d30.
+142304767885015!3d-1.930631923973204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.
+1!3m3!1m2!1s0x19dca77688d3131f%3A0x3a65f6d29a33c0d3!2sAfrican%20Leadership%20Univers
+3m2!1sen!2srw!4v1740972551795!5m2!1sen!2srw"
+             class="w-full h-full"
+             style="border:0;"
+             allowfullscreen=""
+             loading="lazy"
+             referrerpolicy="no-referrer-when-downgrade">
+           </iframe>
+         </div>
+       </div>
+       <!-- Contact Details -->
+       <div class="space-y-4">
+         <h5 class="text-lg font-semibold text-white">Contact Us</h5>
+         <div class="space-y-2">
+           <p class="flex items-center">
+             <i class="fas fa-phone mr-3 text-blue-400"></i>
+             +237 677 590 328
+           </p>
+           <p class="flex items-center">
+             <i class="fas fa-envelope mr-3 text-blue-400"></i>
+             meshs2012@gmail.com
+           </p>
+           <p class="flex items-center">
+             <i class="fas fa-clock mr-3 text-blue-400"></i>
+             Monday—Saturday: 8:00AM–4:00PM<br>
+             Sunday: Closed
+           </p>
+         </div>
+       </div>
+     </div>
+     <!-- Social Media & Copyright -->
+     <div class="pt-8 border-t border-gray-800 text-center">
+       <div class="flex justify-center space-x-6 mb-4">
+         <a href="#" class="social-icon">
+           <i class="fab fa-facebook-f"></i>
+         </a>
+         <a href="#" class="social-icon">
+           <i class="fab fa-twitter"></i>
+         </a>
+         <a href="#" class="social-icon">
+           <i class="fab fa-instagram"></i>
+         </a>
+         <a href="#" class="social-icon">
+           <i class="fab fa-linkedin-in"></i>
+         </a>
+       </div>
+       <p class="text-sm text-gray-500">
+         &copy; 2023 AfroScholarHub. All rights reserved.
+       </p>
+     </div>
+   </div>
+ </footer>
+
+</html>

@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="description" content="About AfroScholarHub Charity Initiative - Empowering Students Through Education" />
+    <meta name="description"
+        content="About AfroScholarHub Charity Initiative - Empowering Students Through Education" />
     <meta name="keywords" content="Charity, Donations, Education, Scholarships, Mentorship" />
     <meta name="author" content="AfroScholarHub" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,7 +18,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/frontend/styles/about.css" />
+
+    <style>
+        /* Add these new styles */
+        .nav-link {
+            @apply text-gray-600 hover:text-blue-600 transition-colors duration-300;
+        }
+
+        .mobile-nav-link {
+            @apply py-2 px-4 hover:bg-blue-50 rounded-lg text-gray-700;
+        }
+
+        .partner-icon {
+            @apply p-4 rounded-lg bg-opacity-20;
+        }
+
+        .social-icon {
+            @apply hover:text-blue-400 transition-colors duration-300;
+        }
+    </style>
 </head>
+
 <body>
     <!-- Header -->
     <header class="bg-primary text-white py-3">
@@ -55,7 +77,8 @@
                 <img src="images/logo/logo.png" alt="AfroScholarHub" class="me-2" style="height: 40px;" />
                 <span class="fw-bold">AfroScholarHub Charity Initiative</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -78,7 +101,9 @@
                 <div class="col-md-6">
                     <h2 class="fw-bold">Our Mission</h2>
                     <p class="text-muted">
-                        AfroScholarHub is committed to ensuring that students who cannot afford scholarship application services or basic education costs still have access to opportunities. We provide scholarships, mentorship, and financial support to empower the next generation of leaders.
+                        AfroScholarHub is committed to ensuring that students who cannot afford scholarship application
+                        services or basic education costs still have access to opportunities. We provide scholarships,
+                        mentorship, and financial support to empower the next generation of leaders.
                     </p>
                 </div>
                 <div class="col-md-6">
@@ -89,7 +114,8 @@
                 <div class="col-md-6 order-md-2">
                     <h2 class="fw-bold">Our Vision</h2>
                     <p class="text-muted">
-                        We envision a world where every student, regardless of their financial background, has access to quality education and the resources needed to achieve their dreams.
+                        We envision a world where every student, regardless of their financial background, has access to
+                        quality education and the resources needed to achieve their dreams.
                     </p>
                 </div>
                 <div class="col-md-6 order-md-1">
@@ -100,7 +126,8 @@
                 <div class="col-md-12">
                     <h2 class="fw-bold text-center">Our Team</h2>
                     <p class="text-muted text-center">
-                        Meet the dedicated team behind AfroScholarHub, working tirelessly to make a difference in students' lives.
+                        Meet the dedicated team behind AfroScholarHub, working tirelessly to make a difference in
+                        students' lives.
                     </p>
                     <div class="row g-4 mt-4">
                         <div class="col-md-4">
@@ -121,7 +148,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-md-4">
                             <div class="card h-100 text-center">
                                 <img src="images/team2.jpg" class="card-img-top" alt="Team Member 2" />
@@ -136,7 +163,7 @@
                             <div class="card h-100 text-center">
                                 <img src="images/team3.jpg" class="card-img-top" alt="Team Member 3" />
                                 <div class="card-body">
-                                    <h5 class="card-title">  Tawe kelvin (COO)  </h5>
+                                    <h5 class="card-title"> Tawe kelvin (COO) </h5>
                                     <p class="card-text">Chief Operations Officer</p>
                                 </div>
                             </div>
@@ -148,40 +175,81 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-5">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <h5>Find Us</h5>
-                    <p>No . 250  Kigali - Rwanda , Kigali city , </p>
-                    <h5>Opening Hours</h5>
-                    <p>We are available 24/7 to assist you with any inquiries or support you may need.</p>
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Contact Info -->
+                <div class="space-y-4">
+                    <h5 class="text-lg font-semibold text-white">Find Us</h5>
+                    <div class="space-y-2">
+                        <p class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3 text-blue-400"></i>
+                            No. 123, Etamba Street, Bafoussam, West Region, Cameroon
+                        </p>
+                        <p class="flex items-center">
+                            <i class="fas fa-clock mr-3 text-blue-400"></i>
+                            Mon-Fri: 8:00 AM - 5:00 PM
+                        </p>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <h5>Meet Us</h5>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31900.427917543988!2d30.142304767885015!3d-1.930631923973204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca77688d3131f%3A0x3a65f6d29a33c0d3!2sAfrican%20Leadership%20University!5e0!3m2!1sen!2srw!4v1740972551795!5m2!1sen!2srw" style="border:0; width: 100%; height: 200px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <!-- Map -->
+                <div class="md:col-span-2 lg:col-span-1">
+                    <h5 class="text-lg font-semibold text-white mb-4">Our Location</h5>
+                    <div class="aspect-video bg-gray-800 rounded-lg overflow-hidden">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31900.427917543988!2d30.
+     142304767885015!3d-1.930631923973204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.
+     1!3m3!1m2!1s0x19dca77688d3131f%3A0x3a65f6d29a33c0d3!2sAfrican%20Leadership%20Univers
+     3m2!1sen!2srw!4v1740972551795!5m2!1sen!2srw" class="w-full h-full" style="border:0;" allowfullscreen=""
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <h5>Contact Us</h5>
-                    <p><i class="fas fa-phone"></i> +250 7XXXXXXXX
-                    </p>
-                    <p><i class="fas fa-envelope"></i> afroschlarhub@gmail.com</p>
-                    <p><i class="fas fa-clock"></i> Monday—Saturday: 8:00AM–4:00PM <br />Sunday: Holiday</p>
+                <!-- Contact Details -->
+                <div class="space-y-4">
+                    <h5 class="text-lg font-semibold text-white">Contact Us</h5>
+                    <div class="space-y-2">
+                        <p class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-blue-400"></i>
+                            +237 677 590 328
+                        </p>
+                        <p class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-blue-400"></i>
+                            meshs2012@gmail.com
+                        </p>
+                        <p class="flex items-center">
+                            <i class="fas fa-clock mr-3 text-blue-400"></i>
+                            Monday—Saturday: 8:00AM–4:00PM<br>
+                            Sunday: Closed
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="text-center mt-4">
-                <div class="social-icons mb-3">
-                    <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
+            <!-- Social Media & Copyright -->
+            <div class="pt-8 border-t border-gray-800 text-center">
+                <div class="flex justify-center space-x-6 mb-4">
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
                 </div>
-                <p class="mb-0">&copy; 2023 AfroScholarHub. All rights reserved.</p>
+                <p class="text-sm text-gray-500">
+                    &copy; 2023 AfroScholarHub. All rights reserved.
+                </p>
             </div>
         </div>
     </footer>
 
+
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
