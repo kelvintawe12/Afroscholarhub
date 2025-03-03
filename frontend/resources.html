@@ -1,234 +1,486 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <meta
-            name="description"
-            content="AfroScholarHub Resources - Empowering Students Through Education"
-        />
-        <meta
-            name="keywords"
-            content="Charity, Donations, Education, Scholarships, Resources"
-        />
-        <meta name="author" content="AfroScholarHub" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Resources - AfroScholarHub Charity Initiative</title>
-        <!-- External Libraries -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-            rel="stylesheet"
-        />
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/frontend/styles/resources.css" />
-        <style>
-            /* Custom Styles */
-            body {
-                font-family: "Poppins", sans-serif;
-            }
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="Empowering African Students Through Comprehensive Educational Resources"
+    />
+    <meta
+      name="keywords"
+      content="Education Resources, Scholarship Guides, Career Development, Learning Materials"
+    />
+    <meta name="author" content="AfroScholarHub" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Educational Resources - AfroScholarHub</title>
 
-            .hero-section {
-                background-color: #007bff;
-                color: white;
-                padding: 100px 0;
-                text-align: center;
-            }
+    <!-- External Libraries -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css"
+      rel="stylesheet"
+    />
+    <script src="/frontend/scripts/scripts.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-            .resource-category {
-                margin-bottom: 2rem;
-            }
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/frontend/styles/resources.css" />
+    <style>
+      :root {
+        --primary-blue: #007bff;
+        --accent-orange: #ff6b35;
+        --dark-text: #2d3436;
+        --light-bg: #f8f9fa;
+      }
 
-            .resource-category h3 {
-                font-size: 1.5rem;
-                margin-bottom: 1rem;
-            }
+      .hero-resources {
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue) 0%,
+          #004792 100%
+        );
+        padding: 8rem 0 6rem;
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
 
-            .resource-category a {
-                color: #007bff;
-                text-decoration: none;
-            }
+      .hero-resources::after {
+        content: "";
+        position: absolute;
+        bottom: -50px;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path fill="%23fff" d="M0 64L80 74.7C160 85 320 107 480 112C640 117 800 107 960 85.3C1120 64 1280 32 1360 16L1440 0V120H1360C1280 120 1120 120 960 120C800 120 640 120 480 120C320 120 160 120 80 120H0Z"></path></svg>');
+        background-size: cover;
+      }
 
-            .resource-category a:hover {
-                text-decoration: underline;
-            }
-        </style>
-    </head>
-    <body>
-        <!-- Header -->
-        <header class="bg-primary text-white py-3">
-            <div class="container d-flex justify-content-between align-items-center">
-                <div class="left-box d-flex gap-4">
-                    <div class="phone">
-                        <a href="tel:+237677590328" class="text-white text-decoration-none">
-                            <i class="fas fa-phone"></i> (+237) 677590328
-                        </a>
-                    </div>
-                    <div class="email">
-                        <a
-                            href="mailto:meshs2012@gmail.com"
-                            class="text-white text-decoration-none"
-                        >
-                            <i class="fas fa-envelope"></i> meshs2012@gmail.com
-                        </a>
-                    </div>
-                </div>
-                <div class="right-box d-flex gap-4">
-                    <div class="alumini">
-                        <a href="alumni.html" class="text-white text-decoration-none"
-                            >Alumni</a
-                        >
-                    </div>
-                    <div class="calendar">
-                        <a href="calendar.html" class="text-white text-decoration-none"
-                            >Calendar</a
-                        >
-                    </div>
-                    <div class="email-login">
-                        <a href="#" class="text-white text-decoration-none">Email Login</a>
-                    </div>
-                </div>
+      .resource-card {
+        border: none;
+        border-radius: 15px;
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        background: white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .resource-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+      }
+
+      .resource-icon {
+        width: 60px;
+        height: 60px;
+        background: var(--primary-blue);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.75rem;
+        color: white;
+        margin-bottom: 1.5rem;
+      }
+
+      .resource-filter {
+        position: sticky;
+        top: 100px;
+        z-index: 100;
+        background: white;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        border-radius: 15px;
+        padding: 1.5rem;
+      }
+
+      .filter-btn {
+        background: var(--light-bg);
+        border: 2px solid transparent;
+        color: var(--dark-text);
+        transition: all 0.2s ease;
+      }
+
+      .filter-btn.active {
+        background: var(--primary-blue);
+        border-color: var(--primary-blue);
+        color: white;
+      }
+
+      .download-badge {
+        background: var(--accent-orange);
+        color: white;
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 768px) {
+        .hero-resources {
+          padding: 6rem 0 4rem;
+        }
+
+        .hero-resources h1 {
+          font-size: 2.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="bg-primary text-white py-3">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="left-box d-flex gap-4">
+          <div class="phone">
+            <a href="tel:+237677590328" class="text-white text-decoration-none">
+              <i class="fas fa-phone"></i> (+237) 677590328
+            </a>
+          </div>
+          <div class="email">
+            <a
+              href="mailto:meshs2012@gmail.com"
+              class="text-white text-decoration-none"
+            >
+              <i class="fas fa-envelope"></i> meshs2012@gmail.com
+            </a>
+          </div>
+        </div>
+        <div class="right-box d-flex gap-4">
+          <div class="alumini">
+            <a href="alumni.html" class="text-white text-decoration-none"
+              >Alumni</a
+            >
+          </div>
+          <div class="calendar">
+            <a href="calendar.html" class="text-white text-decoration-none"
+              >Calendar</a
+            >
+          </div>
+          <div class="email-login">
+            <a href="#" class="text-white text-decoration-none">Email Login</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img
+                    src="images/logo/logo.png"
+                    alt="AfroScholarHub"
+                    class="me-2"
+                    style="height: 40px"
+                />
+                <span class="fw-bold">AfroScholarHub Charity Initiative</span>
+            </a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="programs.html">Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="donate.html">Donate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
             </div>
-        </header>
+        </div>
+    </nav>
+    <!-- Enhanced Hero Section -->
+    <section class="hero-resources text-center">
+      <div class="container">
+        <h1
+          class="display-4 fw-bold mb-4 animate__animated animate__fadeInDown"
+        >
+          Empower Your Journey
+        </h1>
+        <p class="lead mb-5">
+          Access premium educational resources curated for African scholars
+        </p>
 
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-            <div class="container">
-                <a class="navbar-brand d-flex align-items-center" href="index.html">
-                    <img
-                        src="images/logo/logo.png"
-                        alt="AfroScholarHub"
-                        class="me-2"
-                        style="height: 40px"
-                    />
-                    <span class="fw-bold">AfroScholarHub Charity Initiative</span>
-                </a>
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav"
-                    aria-controls="navbarNav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="programs.html">Programs</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="donate.html">Donate</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
-                    </ul>
-                </div>
+        <!-- Resource Search -->
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="input-group mb-5 shadow-lg">
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                placeholder="Search resources..."
+                aria-label="Resource search"
+              />
+              <button class="btn btn-primary btn-lg" type="button">
+                <i class="fas fa-search"></i>
+              </button>
             </div>
-        </nav>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="container">
-                <h1>Resources</h1>
-                <p>Tools and guides to help you succeed.</p>
+    <!-- Resource Section -->
+    <main class="py-5 bg-light">
+      <div class="container">
+        <!-- Resource Filter -->
+        <div class="row mb-5">
+          <div class="col-lg-3">
+            <div class="resource-filter">
+              <h5 class="mb-3">Filter Resources</h5>
+              <div class="d-flex flex-wrap gap-2">
+                <button class="btn filter-btn active">All</button>
+                <button class="btn filter-btn">Scholarships</button>
+                <button class="btn filter-btn">Career</button>
+                <button class="btn filter-btn">Workshops</button>
+              </div>
             </div>
-        </section>
+          </div>
 
-        <!-- Resource Categories -->
-        <section class="py-5">
-            <div class="container">
-                <div class="resource-category">
-                    <h3>How to Apply for Scholarships</h3>
-                    <a href="path/to/scholarship-guide.pdf" download>Download Guide (PDF)</a>
+          <!-- Resource Grid -->
+          <div class="col-lg-9">
+            <div class="row g-4">
+              <!-- Scholarship Guide -->
+              <div class="col-md-6">
+                <div class="resource-card p-4">
+                  <div class="resource-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                  </div>
+                  <h3 class="h5 fw-bold mb-3">Ultimate Scholarship Guide</h3>
+                  <p class="text-muted mb-4">
+                    Step-by-step guide to securing international scholarships
+                    with success stories from our alumni.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <a href="#" class="btn btn-primary">
+                      <i class="fas fa-download me-2"></i>Download PDF
+                    </a>
+                    <span class="download-badge">
+                      <i class="fas fa-file-pdf me-1"></i>2.5MB
+                    </span>
+                  </div>
                 </div>
-                <div class="resource-category">
-                    <h3>10 Tips for Career Success</h3>
-                    <a href="path/to/career-tips.pdf" download>Download Tips (PDF)</a>
+              </div>
+
+              <!-- Career Success -->
+              <div class="col-md-6">
+                <div class="resource-card p-4">
+                  <div class="resource-icon bg-warning">
+                    <i class="fas fa-briefcase"></i>
+                  </div>
+                  <h3 class="h5 fw-bold mb-3">Career Accelerator Kit</h3>
+                  <p class="text-muted mb-4">
+                    Masterclass series on resume building, interview skills, and
+                    career networking strategies.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <a href="#" class="btn btn-primary">
+                      <i class="fas fa-play-circle me-2"></i>Watch Videos
+                    </a>
+                    <span class="download-badge bg-success"> 5 Modules </span>
+                  </div>
                 </div>
-                <div class="resource-category">
-                    <h3>Workshop Slides and Handouts</h3>
-                    <a href="path/to/workshop-materials.html">Access Materials</a>
+              </div>
+
+              <!-- Workshop Materials -->
+              <div class="col-md-6">
+                <div class="resource-card p-4">
+                  <div class="resource-icon bg-success">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                  </div>
+                  <h3 class="h5 fw-bold mb-3">Workshop Toolkit</h3>
+                  <p class="text-muted mb-4">
+                    Complete set of materials from our leadership and technical
+                    skills workshops.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div>
+                      <a href="#" class="btn btn-primary me-2">
+                        <i class="fas fa-download"></i>
+                      </a>
+                      <a href="#" class="btn btn-outline-primary">
+                        <i class="fas fa-external-link-alt"></i>
+                      </a>
+                    </div>
+                    <span class="text-muted small">Updated: Feb 2024</span>
                 </div>
-                <div class="resource-category">
-                    <h3>Useful Links</h3>
-                    <ul>
-                        <li><a href="https://www.coursera.org" target="_blank">Coursera</a></li>
-                        <li><a href="https://www.khanacademy.org" target="_blank">Khan Academy</a></li>
-                    </ul>
                 </div>
+                <!-- another similar page -->
+              </div>
+              <!-- Learning Platforms -->
+              <div class="col-md-6">
+                <div class="resource-card p-4">
+                  <div class="resource-icon bg-info">
+                    <i class="fas fa-link"></i>
+                  </div>
+                  <h3 class="h5 fw-bold mb-3">Premium Learning Access</h3>
+                  <p class="text-muted mb-4">
+                    Exclusive discounts and free courses on top educational
+                    platforms:
+                  </p>
+                  <div class="d-grid gap-2">
+                    <a
+                      href="#"
+                      class="btn btn-outline-dark d-flex justify-content-between align-items-center"
+                    >
+                      Seek mentoring from afroscholarhub</strong> mentor 
+                      <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a
+                      href="#"
+                      class="btn btn-outline-dark d-flex justify-content-between align-items-center"
+                    >
+                      Khan Academy
+                      <i class="fas fa-arrow-right"></i>
+                    <a
+                      href="#"
+                      class="btn btn-outline-dark d-flex justify-content-between align-items-center"
+                    >
+                      Coursera Pro
+                      <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a
+                      href="#"
+                      class="btn btn-outline-dark d-flex justify-content-between align-items-center"
+                    >
+                      Khan Academy
+                      <i class="fas fa-arrow-right"></i>
+                    </a>
+                  </div>
+                  <div class="text-center">
+                    <a href="#" class="btn btn-primary">See all platforms</a>
+  
+                </div>
+              </div>
+              <!-- Social Media Links -->
+                <div class="col-md-6" style="margin-top: 30px;">
+                    <div class="resource-card p-4">
+                    <div class="resource-icon bg-dark">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h3 class="h5 fw-bold
+                    mb-3">Social Media Links</h3>
+                    <p class="text-muted
+                    mb-4">Follow us on social media for daily updates and
+                    resources:</p>
+                    <div class="d-grid gap
+                    -2">
+                    <a href="#" class="btn btn-outline-dark d-flex justify-content-between align-items-center">
+                      <i class="fab fa-linkedin-in"></i> LinkedIn
+                      <i class="fas fa-arrow-right"></i>
+                    </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </main>
 
-        <!-- Footer -->
-        <footer class="bg-dark text-white py-5">
-            <div class="container">
-                <div class="row g-4">
-                    <div class="col-md-4">
-                        <h5>Find Us</h5>
-                        <p>No. 123, Etamba Street, Bafoussam, West Region, Cameroon</p>
-                        <h5>Opening Hours</h5>
-                        <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
-                    </div>
-                    <div class="col-md-4">
-                        <h5>Meet Us</h5>
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31900.427917543988!2d30.142304767885015!3d-1.930631923973204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca77688d3131f%3A0x3a65f6d29a33c0d3!2sAfrican%20Leadership%20University!5e0!3m2!1sen!2srw!4v1740972551795!5m2!1sen!2srw"
-                            style="border: 0; width: 100%; height: 200px"
-                            allowfullscreen=""
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                        ></iframe>
-                    </div>
-                    <div class="col-md-4">
-                        <h5>Contact Us</h5>
-                        <p><i class="fas fa-phone"></i> +237677590328</p>
-                        <p><i class="fas fa-envelope"></i> meshs2012@gmail.com</p>
-                        <p>
-                            <i class="fas fa-clock"></i> Monday—Saturday: 8:00AM–4:00PM
-                            <br />Sunday: Holiday
-                        </p>
-                    </div>
-                </div>
-                <div class="text-center mt-4">
-                    <div class="social-icons mb-3">
-                        <a href="#" class="text-white me-3"
-                            ><i class="fab fa-facebook-f"></i
-                        ></a>
-                        <a href="#" class="text-white me-3"
-                            ><i class="fab fa-twitter"></i
-                        ></a>
-                        <a href="#" class="text-white me-3"
-                            ><i class="fab fa-instagram"></i
-                        ></a>
-                        <a href="#" class="text-white me-3"
-                            ><i class="fab fa-linkedin-in"></i
-                        ></a>
-                    </div>
-                    <p class="mb-0">&copy; 2023 AfroScholarHub. All rights reserved.</p>
-                </div>
-            </div>
-        </footer>
+    <footer class="bg-dark text-white py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <h5>Find Us</h5>
+            <p>No. 123, Etamba Street, Bafoussam, West Region, Cameroon</p>
+            <h5>Opening Hours</h5>
+            <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+          </div>
+          <div class="col-md-4">
+            <h5>Meet Us</h5>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31900.427917543988!2d30.142304767885015!3d-1.930631923973204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca77688d3131f%3A0x3a65f6d29a33c0d3!2sAfrican%20Leadership%20University!5e0!3m2!1sen!2srw!4v1740972551795!5m2!1sen!2srw"
+              style="border: 0; width: 100%; height: 200px"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div class="col-md-4">
+            <h5>Contact Us</h5>
+            <p><i class="fas fa-phone"></i> +237677590328</p>
+            <p><i class="fas fa-envelope"></i> meshs2012@gmail.com</p>
+            <p>
+              <i class="fas fa-clock"></i> Monday—Saturday: 8:00AM–4:00PM
+              <br />Sunday: Holiday
+            </p>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <div class="social-icons mb-3">
+            <a href="#" class="text-white me-3"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="text-white me-3"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" class="text-white me-3"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="text-white me-3"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+          <p class="mb-0">&copy; 2023 AfroScholarHub. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
 
-        <!-- Scripts -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Add filter functionality
+      document.querySelectorAll(".filter-btn").forEach((button) => {
+        button.addEventListener("click", () => {
+          document
+            .querySelectorAll(".filter-btn")
+            .forEach((btn) => btn.classList.remove("active"));
+          button.classList.add("active");
+          // Add filter logic here
+        });
+      });
+
+      // Add card hover effects
+      document.querySelectorAll(".resource-card").forEach((card) => {
+        card.addEventListener("mouseenter", () => {
+          card.style.transform = "translateY(-10px)";
+        });
+        card.addEventListener("mouseleave", () => {
+          card.style.transform = "translateY(0)";
+        });
+      });
+    </script>
+  </body>
 </html>
