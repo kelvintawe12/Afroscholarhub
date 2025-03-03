@@ -73,7 +73,8 @@ header {
 }
 
 footer {
-    background-color: #343a40;
+    background-color: #000305;
+    color: #cfd6de;
 }
 
 footer a {

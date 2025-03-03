@@ -1,65 +1,105 @@
-/* Custom Styles */
+/* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
 }
 
+/* Header */
 header {
     background-color: #007bff;
+    color: white;
 }
 
-.navbar-brand img {
-    height: 40px;
+header a {
+    color: white;
+    text-decoration: none;
 }
 
-.navbar-nav .nav-link {
-    font-weight: 500;
+header a:hover {
+    text-decoration: underline;
 }
 
+/* Navigation */
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    color: #333;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+
+/* About Section */
 .about-section {
-    padding: 100px 0;
+    padding: 3rem 0;
 }
 
-.about-section h1 {
-    font-size: 3rem;
-    margin-bottom: 2rem;
-}
-
+.about-section h1,
 .about-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-}
-
-.about-section p {
-    font-size: 1.1rem;
-    color: #6c757d;
+    color: #007bff;
 }
 
 .about-section img {
     border-radius: 10px;
+    transition: transform 0.3s;
 }
 
-.team-section .card {
-    transition: transform 0.3s ease;
+.about-section img:hover {
+    transform: scale(1.05);
 }
 
-.team-section .card:hover {
+/* Team Cards */
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Footer */
 footer {
-    background-color: #343a40;
+    background-color: #333;
+    color: #ccc;
+    padding: 3rem 0;
+}
+
+footer h5 {
+    color: white;
 }
 
 footer a {
-    color: #ffffff;
-    text-decoration: none;
+    color: #ccc;
+    transition: color 0.3s;
 }
 
 footer a:hover {
     color: #007bff;
 }
 
-.social-icons a {
-    font-size: 1.2rem;
-    margin: 0 0.5rem;
+footer .social-icon {
+    color: #ccc;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+footer .social-icon:hover {
+    color: #007bff;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .about-section .row {
+        text-align: center;
+    }
+
+    .about-section img {
+        margin-bottom: 1rem;
+    }
 }
