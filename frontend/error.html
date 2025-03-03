@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error - AfroScholarHub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --primary-color: #2A5C87;
+            --accent-color: #F9A826;
+            --dark-color: #1A365D;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: var(--dark-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .error-page {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .error-page::before {
+            content: "⚡";
+            position: absolute;
+            font-size: 40rem;
+            opacity: 0.03;
+            z-index: -1;
+            animation: pulse 2s infinite;
+        }
+
+        .error-page h1 {
+            font-size: 8rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--dark-color), var(--primary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .error-page p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .error-btn {
+            background: var(--primary-color);
+            color: white !important;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none !important;
+            box-shadow: 0 4px 15px rgba(42, 92, 135, 0.2);
+        }
+
+        .error-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(42, 92, 135, 0.3);
+            background: #234a6d;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Footer Fixes (Remove Tailwind classes and use custom CSS) */
+        footer {
+            background: var(--dark-color);
+            color: #fff;
+            padding: 3rem 0;
+            margin-top: auto;
+        }
+
+        .footer-section {
+            margin-bottom: 2rem;
+        }
+
+        .footer-heading {
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Add responsive spacing */
+        @media (max-width: 768px) {
+            .error-page h1 {
+                font-size: 5rem;
+            }
+            .error-page p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="error-page">
+        <h1>404</h1>
+        <p>Oops! The page you're searching for seems to have taken an unexpected sabbatical. Don't worry - our team of academic detectives is on the case!</p>
+        <a href="index.html" class="error-btn">
+            <i class="fas fa-home"></i>
+            Return to Knowledge Hub
+        </a>
+    </div>
+
+    <footer>
+        <div class="container">
+            <!-- Simplified Footer Content -->
+            <div class="row text-center">
+                <div class="col-md-4 footer-section">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Scholarships</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Mentorship</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 footer-section">
+                    <h4 class="footer-heading">Contact</h4>
+                    <p>contact@afroscholarhub.com</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white mx-2"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 footer-section">
+                    <h4 class="footer-heading">Newsletter</h4>
+                    <form>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Enter email">
+                            <button class="btn btn-warning" type="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p class="text-muted">&copy; 2023 AfroScholarHub. Empowering futures through education.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

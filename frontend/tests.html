@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Previous meta tags and stylesheets -->
+    <style>
+        /* Header Styles */
+        .main-header {
+            background: linear-gradient(135deg, #1A365D 0%, #2A5C87 100%);
+            padding: 0.5rem 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .scrolled-header {
+            background: rgba(26, 54, 93, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 0.3rem 1rem;
+        }
+
+        .brand-logo {
+            font-weight: 700;
+            font-size: 1.8rem;
+            background: linear-gradient(45deg, #F9A826, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .brand-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-link {
+            color: #fff !important;
+            padding: 0.8rem 1.2rem !important;
+            margin: 0 0.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #F9A826;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::before {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: #F9A826;
+            border-radius: 30px;
+            padding: 0.8rem 2rem !important;
+            margin-left: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(249, 168, 38, 0.4);
+        }
+
+        .mobile-menu {
+            color: #fff !important;
+            border: none;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .nav-link {
+                margin: 0.5rem 0;
+                padding: 0.8rem !important;
+            }
+            
+            .nav-cta {
+                margin: 1rem 0 0 0;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Animation */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .main-header {
+            animation: slideIn 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand brand-logo" href="#">
+                    AfroScholarHub
+                </a>
+                <button class="navbar-toggler mobile-menu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="fas fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-home me-2"></i>Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-graduation-cap me-2"></i>Programs
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Scholarships</a></li>
+                                <li><a class="dropdown-item" href="#">Mentorship</a></li>
+                                <li><a class="dropdown-item" href="#">Workshops</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-book-open me-2"></i>Resources</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-cta" href="#">
+                                <i class="fas fa-hand-holding-heart me-2"></i>Support Us
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Add this script for header scroll effect -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled-header');
+            } else {
+                header.classList.remove('scrolled-header');
+            }
+        });
+    </script>
+</body>
+</html>
