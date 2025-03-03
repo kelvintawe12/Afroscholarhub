@@ -1,0 +1,91 @@
+/* Custom Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    background-color: #007bff;
+}
+
+.navbar-brand img {
+    height: 40px;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+}
+
+.careers-section {
+    padding: 100px 0;
+}
+
+.careers-section h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.careers-section p {
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.why-work-section .card {
+    text-align: center;
+    padding: 2rem;
+}
+
+.why-work-section .card i {
+    margin-bottom: 1rem;
+}
+
+footer {
+    background-color: #343a40;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #007bff;
+}
+
+.social-icons a {
+    font-size: 1.2rem;
+    margin: 0 0.5rem;
+}
